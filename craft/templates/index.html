@@ -1,0 +1,225 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+
+<!-- START OF LANDING BLOCK 1 -->
+
+<div class="landing-top-block w-clearfix">
+  <div class="landing-block-1">
+    <h1 class="h1"><span class="text-span">Book a free</span> 15 minute video chat with a student at your dream university</h1>
+    <ul class="mobile-landing-top-block-feature">
+      <li class="mobile-top-block-feature-item">Search for any University in the world</li>
+      <li class="mobile-top-block-feature-item">Book a free video chat with a student at your dream University</li>
+      <li class="mobile-top-block-feature-item">Ask them any questions you have about University life</li>
+    </ul>
+    <div class="w-row">
+      <div class="w-col w-col-4">
+        <div class="landing-top-block-feature"><img class="landing-top-block-feature-image" src="/resources/images/graphic-search.png" width="76">
+          <p>Search for any University in the world</p>
+        </div>
+      </div>
+      <div class="w-col w-col-4">
+        <div class="landing-top-block-feature"><img class="landing-top-block-feature-image" src="/resources/images/graphic-browse.png" width="61">
+          <p>Book a free video chat with a student at your dream University</p>
+        </div>
+      </div>
+      <div class="w-col w-col-4">
+        <div class="landing-top-block-feature"><img class="landing-top-block-feature-image" src="/resources/images/graphic-15minute.png" width="69">
+          <p>Ask them any questions you have about University life</p>
+        </div>
+      </div>
+    </div>
+    <div class="large-searchbar-wrapper">
+      <div class="form-wrapper w-form">
+        <form action="{{ url('search/results') }}">
+          <input class="search-bar-large w-input" type="search" name="q" placeholder="Search for any University...">
+          <input type="submit" class="search-big-button w-button" href="#" value="">
+        </form>
+      </div>
+    </div>
+    <img src="/resources/images/start-here.png" style="margin:5px 0px 0px 20px; width:117px;"/>
+  </div>
+  {% for asset in entry.featuredLandingImage %}
+    <div class="landing-block-2" style="background-image:url('{{asset.url}}')">
+      <svg width="0px" height="0px" viewBox="-47 0 570 657" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <clipPath id="myClip">
+              <path d="M8.76027691,204.210187 C3.58280041,248.194565 0,295.847283 0,343.5 C7.59114993e-15,515.25 46.5415415,687 46.5415415,687 L547,687 L547,1.19175503e-15 L46.5415415,0 C46.5415415,0 40.1837021,23.4620273 32.1677645,61.714468 L32.419779,61.6933366 C32.419779,61.6933366 32.2397362,62.0549908 31.9482121,62.7639067 C30.539482,69.508583 29.0812335,76.7042572 27.5986931,84.3043833 C26.6967829,100.359061 29.6601662,124.342909 46.1016259,154.237872 C77.4651141,211.265068 113.06116,220.196094 113.06116,220.196094 C113.06116,220.196094 64.1280361,222.484652 8.76027691,204.210187 Z" id="path-1"></path>
+          </defs>
+      </svg>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- END OF LANDING BLOCK 1 -->
+
+<!-- START OF UNIVERSITY BANNERS -->
+
+<div class="banner-universities">
+  <div class="w-container">
+    <div class="w-row">
+      <div class="w-col w-col-3">
+        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        </div>
+      </div>
+      <div class="w-col w-col-3">
+        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        </div>
+      </div>
+      <div class="w-col w-col-3">
+        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        </div>
+      </div>
+      <div class="w-col w-col-3">
+        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END OF UNIVERSITING BANNERS -->
+
+<!-- START OF HOW IT WORKS -->
+
+<div class="how-it-works-block" id="how-it-works">
+  <div class="container-3 w-container">
+    <div class="mobile-title title">
+      <h2 class="heading-2">How does it work?</h2>
+      <p class="sub-heading">Easy, friendly and free</p>
+    </div>
+    <div class="w-row">
+      <div class="w-col w-col-6 w-col-stack">
+        <div class="how-it-works-content">
+          <h2 class="heading-2">How does StudyMatchr work?</h2>
+          <p class="sub-heading">Easy, friendly and free</p>
+          <ul class="ticked-list w-list-unstyled">
+            {% for block in entry.howItWorksPoints %}
+                <li class="ticked-list-item">{{ block.keyPoint }}</li>
+            {% endfor %}
+          </ul><a class="button-positive w-button" href="/university">Browse Universities →</a>
+        </div>
+      </div>
+      <div class="w-col w-col-6 w-col-stack">
+        <div class="how-it-works-video w-embed w-video" style="padding-top: 56.17021276595745%;">
+          <iframe class="embedly-embed" src="{{ entry.howItWorksVideo }}" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END OF HOW IT WORKS -->
+
+
+<!-- START OF FEATURED UNIVERSITIES -->
+<div class="feature-universities-block">
+  <div class="w-container">
+    <div class="title">
+      <h2 class="heading-2">Featured Universities</h2>
+      <p class="sub-heading">Connect with a friendly face at any of these schools</p>
+    </div>
+
+
+    <!-- FETCHING CATEGORIES THAT CONTAIN THE TAG 'FEATURED' -->
+      {% set tag = craft.tags.slug('featured').first() %}
+      {% set categories = craft.categories.relatedTo(tag) %}
+
+      {% if categories|length %}
+        {% for category in categories.limit(3) %}
+
+          <a class="university-widget w-inline-block" href="{{ category.url }}">
+
+            {% for asset in category.universityImage %}
+              <div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
+            {% endfor %}
+
+            <div class="university-widget-content">
+              {% for asset in category.universityLogo %}
+                <img class="university-widget-logo" src="{{asset.url}}" height="40">
+              {% endfor %}
+              <p class="small-paragraph university-widget-description-test" id="university-widget-description">{{ category.description }}</p>
+            </div>
+          </a>
+
+        {% endfor %}
+      {% endif %}
+    <!-- END -->
+
+<a class="button-positive w-button" href="/university/">Browse ALL Universities →</a>
+  </div>
+</div>
+<!-- END OF FEATURED UNIVERSITIES -->
+
+
+<!-- START OF PARRALAX BLOCK -->
+{% for asset in entry.secondaryImage %}
+  <div class="parralax-scroll" style="background-image:url({{asset.url}})"></div>
+{% endfor %}
+<!-- END -->
+
+<!-- START OF FEATURED MENTOR -->
+
+  <div class="featured-mentor-block">
+    <div class="w-container">
+      <div class="title">
+        <h2 class="heading-2">Featured Student</h2>
+        <p class="sub-heading">Here to answer any questions you have about University life</p>
+      </div>
+
+      {% set tag = craft.tags.slug('featured-student').first() %}
+      {% set entries = craft.entries.relatedTo(tag) %}
+
+      {% if entries|length %}
+        {% for entry in entries.limit(1) %}
+        {% set categories = craft.categories.relatedTo(entry) %}
+
+            <div class="featured-mentor-wrapper w-clearfix">
+              <div class="featured-mentor-information">
+
+                {% for category in categories %}
+                  {% for asset in category.universityLogo %}
+                    <img class="university-widget-logo" src="{{asset.url}}" height="40">
+                  {% endfor %}
+                {% endfor %}
+
+                <h3 class="heading-3">{{ entry.title }}</h3>
+                <p class="paragraph-text">{{ entry.body|striptags|raw }}</p>
+              </div>
+              {% for asset in entry.featuredStudentImage %}
+                <div class="featured-mentor-image" style="background-image: url('{{ asset.url }}')"></div>
+              {% endfor %}
+            </div>
+
+        {% endfor %}
+      {% endif %}
+
+
+    </div>
+  </div>
+
+<!-- END -->
+
+
+
+{% endblock %}

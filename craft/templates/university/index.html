@@ -1,0 +1,114 @@
+{% extends "_layout" %}
+{% block content %}
+
+
+{% set sortOptions = [
+    {
+        label: 'Name Z - A',
+        value: 'title desc'
+    },
+    {
+        label: 'Name A - Z',
+        value: 'title asc'
+    },
+] %}
+
+{% set selectedSortOption = craft.request.getParam('order', 'title asc') %}
+
+<div class="universities-block">
+	<div class="w-container">
+		<div class="w-row">
+			<div class="w-col w-col-9">
+				<div class="title">
+					<h2 class="heading-2">Universities</h2>
+					<p class="sub-heading">Find your safety, reach and dream schools</p>
+				</div>
+			</div>
+			<div class="w-col w-col-3">
+
+				<div class="w-form">
+          <select class="sort-web w-select" data-name="Sort" id="sortQuery" name="Sort">
+              {% for sortOption in sortOptions %}
+                  <option value="{{ sortOption.value }}" {{ sortOption.value == selectedSortOption ? 'selected' }}>
+                      {{ sortOption.label }}
+                  </option>
+              {% endfor %}
+          </select>
+				</div>
+
+			</div>
+		</div>
+
+
+    {# Either get the order from the query or use a default #}
+
+    {% paginate craft.categories.group('university').order(selectedSortOption).limit(20) as pageEntries %}
+    <div id="university-widget-wrapper">
+
+    {% for category in pageEntries %}
+      <a class="university-widget w-inline-block" href="{{ category.url }}">
+        {% for asset in category.universityImage %}
+          <div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
+        {% endfor %}
+        <div class="university-widget-content">
+          {% for asset in category.universityLogo %}
+            <img class="university-widget-logo" src="{{ asset.url }}" height="40">
+          {% endfor %}
+          <p class="small-paragraph university-widget-description-test" id="university-widget-description">{{ category.description }}</p>
+        </div>
+      </a>
+    {% endfor %}
+    </div>
+
+
+    <div id="pagination">
+      {% if paginate.prevUrl %}
+          <a class="button left previous" href="{{ paginate.prevUrl }}?order={{ selectedSortOption }}">Previous</a>
+      {% endif %}
+      {% if paginate.nextUrl %}
+          <a class="button right next" href="{{ paginate.nextUrl }}?order={{ selectedSortOption }}">Next</a>
+      {% endif %}
+    </div>
+
+
+	</div>
+</div>
+
+
+<script>
+  var ias = jQuery.ias({
+    container:  '#university-widget-wrapper',
+    item:       '.university-widget',
+    pagination: '#pagination',
+    next:       '.next'
+  });
+
+  ias.extension(new IASSpinnerExtension());            // shows a spinner (a.k.a. loader)
+  ias.extension(new IASTriggerExtension({
+    offset: 1,
+    text: '<a class="button-positive w-button" href="#">Load More Results</a>'
+  })); // shows a trigger after page 3
+  ias.extension(new IASNoneLeftExtension({
+    text: '<p class="sub-heading">No more universities left!</p>'
+      // override text when no pages left
+  }));
+
+</script>
+
+
+{% set orderJs %}
+  $(function(){
+
+    $('#sortQuery').on("change", function(e){
+
+     // Get the value from the select
+     var filter = $(this).val();
+     document.location.href = '{{ craft.request.getUrl() }}?order=' + filter;
+
+   });
+
+  });
+{% endset %}
+{% includeJs orderJs %}
+
+{% endblock %}

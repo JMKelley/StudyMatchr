@@ -1,0 +1,106 @@
+{% extends "_layout" %}
+{% block content %}
+
+{% set query = craft.request.getParam('q') %}
+{% set results = craft.categories({
+    search: {
+        query: query,
+        subLeft: true,
+        subRight: true
+    }
+}) %}
+
+<div class="universities-block">
+	<div class="w-container">
+
+
+        {% if results|length %}
+          <div class="w-row">
+            <div class="w-col w-col-9">
+              <div class="title">
+                <h2 class="heading-2">You searched for '{{ query }}'</h2>
+                <p class="sub-heading">{{ results|length }} Results</p>
+              </div>
+            </div>
+            <div class="w-col w-col-3">
+            </div>
+          </div>
+
+        {% paginate craft.categories.search(query).order('score').limit(1) as SearchResults %}
+        {% for category in SearchResults %}
+        <div id="university-widget-wrapper">
+            <a class="university-widget w-inline-block" href="{{ category.url }}">
+              <div class="university-widget-image"></div>
+              <div class="university-widget-content">
+                {% for asset in category.universityLogo %}
+                  <img class="university-widget-logo" src="{{ asset.url }}" height="40">
+                {% endfor %}
+                <p class="small-paragraph">{{ category.description }}</p>
+              </div>
+            </a>
+        </div>
+        {% endfor %}
+
+          <div id="pagination">
+            {% if paginate.prevUrl %}
+                <a class="button left previous" href="{{ paginate.prevUrl }}?q={{ query }}">Previous</a>
+            {% endif %}
+            {% if paginate.nextUrl %}
+                <a class="button right next" href="{{ paginate.nextUrl }}?q={{ query }}">Next</a>
+            {% endif %}
+          </div>
+
+        {% else %}
+            <p class="four-oh-four">Sorry, we can’t find anything for “{{ query }}” , but check out the following universities</p>
+
+                <!-- FETCHING CATEGORIES THAT CONTAIN THE TAG 'FEATURED' -->
+                  {% set tag = craft.tags.slug('featured').first() %}
+                  {% set categories = craft.categories.relatedTo(tag) %}
+
+                  {% if categories|length %}
+                    {% for category in categories.limit(3) %}
+
+                      <a class="university-widget w-inline-block" href="{{ category.url }}">
+
+                          <div class="university-widget-image" style="background-image: url('')"></div>
+
+                        <div class="university-widget-content">
+                          {% for asset in category.universityLogo %}
+                            <img class="university-widget-logo" src="{{asset.url}}" height="40">
+                          {% endfor %}
+                          <p class="small-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                        </div>
+                      </a>
+
+                    {% endfor %}
+                  {% endif %}
+                <!-- END -->
+
+        {% endif %}
+
+    </div>
+  </div>
+
+
+  <script>
+    var ias = jQuery.ias({
+      container:  '#university-widget-wrapper',
+      item:       '.university-widget',
+      pagination: '#pagination',
+      next:       '.next'
+    });
+
+    ias.extension(new IASSpinnerExtension());            // shows a spinner (a.k.a. loader)
+    ias.extension(new IASTriggerExtension({
+      offset: 1,
+      text: '<a class="button-positive w-button" href="#">Load More Results</a>'
+    })); // shows a trigger after page 3
+    ias.extension(new IASNoneLeftExtension({
+      text: '<p class="sub-heading">There are no more pages left to load.</p>'      // override text when no pages left
+    }));
+
+  </script>
+
+
+
+{% endblock %}

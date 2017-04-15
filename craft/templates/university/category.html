@@ -1,0 +1,138 @@
+{% extends "_layout" %}
+{% block content %}
+
+
+
+<div class="university-colour" data-ix="grow-circle" style="background-color:{{category.colour}}">
+</div>
+
+
+<div class="inpost-block">
+	<div class="container-2 w-container">
+		<div class="w-row">
+			<div class="w-col w-col-4 w-col-stack">
+				<!-- INSERT UNI IMAGE -->
+				{% for asset in category.universityImage %}
+				<div class="inpost-information-image">
+					<img class="image" src="{{ asset.url }}">
+				</div>
+				{% endfor %}
+
+				<div class="inpost-information">
+					<div class="column-fixed-width">
+						{% for asset in category.universityLogo %}
+							<img class="university-widget-logo" src="{{ asset.url }}" height="40">
+						{% endfor %}
+					</div>
+					<div class="column-fixed-width">
+						<a class="inpost-location w-inline-block" href="#">
+							<div class="location-link small-text-link">{{ category.location }}</div>
+						</a>
+					</div>
+
+					<!-- KEY FEATURES -->
+					<ul class="inpost-university-features">
+						{% for block in category.keyFeature %}
+						    <li class="inpost-university-features-item">{{ block.universityFeature }}</li>
+						{% endfor %}
+					</ul>
+					<!-- END OF KEY FEATURES -->
+
+					<p class="inpost-university-description small-paragraph">{{ category.description }}</p>
+				</div>
+			</div>
+			<div class="col-extra-space w-col w-col-8 w-col-stack">
+				<h2 class="heading-medium">Students at {{ category.title }}</h2>
+				<p class="sub-heading">These students at {{ category.title }} are available for video chats. </br> Select a profile and book a free chat.</p>
+
+				{% set entries = craft.entries.relatedTo(category) %}
+
+				{# Output them #}
+				{% if entries|length %}
+				{% for entry in entries %}
+
+						<div class="inpost-student-wrapper">
+							<div class="inpost-student-information">
+								<div class="w-row">
+									<div class="w-col w-col-7">
+										<h4 class="heading-small">{{ entry.title }}</h4>
+										<div class="small-subtext">{{ entry.studentsubject }}</div>
+										<div class="small-subtext">From {{ entry.studentlocation }}</div>
+									</div>
+									<div class="w-col w-col-5"><a class="button-positive button-positive-small w-button" href="{{ entry.studentCalendly }}">Book Free Video Chat</a>
+									</div>
+								</div>
+							</div>
+							{% for asset in entry.studentAvatar %}
+								<div class="inpost-student-image" style="background-image:url('{{asset.url}}')"></div>
+							{% endfor %}
+						</div>
+				{% endfor %}
+
+				{% else %}
+						<p class="four-oh-four">Sorry, no students are currently available for {{category.title}}</p>
+
+				{% endif %}
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- FEATURED VIDEO BLOCK -->
+<div class="center-text inpost-block">
+	<div class="w-container">
+		<div class="title">
+			<h2 class="heading-2">Featured Video</h2>
+			<p class="sub-heading">A glimpse from {{ category.title }}</p>
+		</div>
+		<div class="video w-embed w-video" style="padding-top: 56.17021276595745%; box-shadow: 24px 24px 0 -13px {{category.colour}};">
+			<iframe class="embedly-embed" src="{{ category.universityVideo }}" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+	</div>
+</div>
+<!-- FEATURED VIDEO END -->
+
+
+<!-- RELATED UNIVERSITIES -->
+
+<div class="feature-universities-block">
+	<div class="w-container">
+		<div class="title">
+			<h2 class="heading-2">Related Universities</h2>
+			<p class="sub-heading">Also check out these Universities</p>
+		</div>
+
+		{% set limitCriteria = craft.categories.limit(3) %}
+		{% set similarCategoriesByTags = craft.similar.find({ element: category, context: category.tags, criteria: limitCriteria }) %}
+			{% for similarCategory in similarCategoriesByTags %}
+				<a class="university-widget w-inline-block" href="{{ similarCategory.url }}">
+					{% for asset in similarCategory.universityImage %}
+						<div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
+					{% endfor %}
+	        <div class="university-widget-content">
+	          {% for asset in similarCategory.universityLogo %}
+	            <img class="university-widget-logo" src="{{ asset.url }}" height="40">
+	          {% endfor %}
+	          <p class="small-paragraph" id="university-widget-description">{{ similarCategory.description }}</p>
+	        </div>
+	      </a>
+		{% endfor %}
+		<a class="button-positive w-button" href="#">Browse ALL Universities →</a>
+	</div>
+</div>
+
+<!-- END OF RELATED UNIVERSITIES -->
+
+<!-- Calendly badge widget begin -->
+<link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<!-- Calendly badge widget end -->
+
+
+
+
+
+{% endblock %}

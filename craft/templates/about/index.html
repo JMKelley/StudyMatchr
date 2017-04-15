@@ -1,0 +1,42 @@
+{% extends "_layout" %}
+{% block content %}
+
+  {% for asset in entry.headerImage %}
+    <div class="parralax-scroll" style="background-image:url('{{ asset.url }}')"></div>
+  {% endfor %}
+
+  <div class="about-us-block">
+    <div class="container-4 w-container">
+      <div class="title">
+        <h1 class="heading-2">About StudyMatchr</h1>
+      </div>
+      <div class="generalText">
+          {{ entry.generalText| markdown }}
+      </div>
+
+      <div class="title">
+        <h1 class="heading-2">Our Team</h1>
+      </div>
+
+      {% if entry.teamMember | length %}
+        {% for teamMember in entry.teamMember %}
+
+          <div class="inpost-student-wrapper">
+            <div class="inpost-student-information">
+              <h4 class="heading-small">{{ teamMember.title }}</h4>
+              <div class="small-subtext">{{ teamMember.teamMemberDescription }}</div>
+            </div>
+            {% for asset in teamMember.teamAvatar %}
+              <div class="inpost-student-image" style="background-image:url('{{asset.url}}')"></div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <div class="generalText">
+        {{ entry.finalWords| markdown }}
+      </div>
+
+  </div>
+
+{% endblock %}
