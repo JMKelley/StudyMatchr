@@ -9,6 +9,10 @@
 
 
 return array(
+
+  '*' => array(
+  ),
+
   'localhost' => array(
     'devMode' => true,
     'siteUrl' => 'http://localhost:8888/',
@@ -34,7 +38,7 @@ return array(
 
   // Use IP address of your droplet below
   '138.68.20.244' => array(
-    'siteUrl' => null,
+    'siteUrl' => 'http://138.68.20.244/',
 
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
 		'enableCsrfProtection' => true,
