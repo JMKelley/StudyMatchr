@@ -58,8 +58,7 @@ return array(
 
 
     'environmentVariables' => array(
-      'basePath' => '/var/www/html/',
-      'baseUrl'  => 'http://studymatchr.com/',
+      'basePath' => '/var/www/html/'
     )
   )
 );
