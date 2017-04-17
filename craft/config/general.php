@@ -37,7 +37,7 @@ return array(
   ),
 
   // Use IP address of your droplet below
-  '138.68.20.244' => array(
+  'http://www.studymatchr.com/' => array(
     'siteUrl' => 'http://www.studymatchr.com/',
 
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
