@@ -30,7 +30,7 @@
         <div id="university-widget-wrapper">
           {% paginate craft.categories.search(query).order('score').limit(200) as SearchResults %}
           {% for category in SearchResults %}
-            <a class="university-widget w-inline-block" href="/{{ category.url }}">
+            <a class="university-widget w-inline-block" href="{{ category.url }}">
               {% for asset in category.universityImage %}
                 <div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
               {% endfor %}
