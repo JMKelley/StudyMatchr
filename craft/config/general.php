@@ -39,7 +39,7 @@ return array(
 
   // Use IP address of your droplet below
   'studymatchr.com' => array(
-    'siteUrl' => 'studymatchr.com',
+    'siteUrl' => 'http://studymatchr.com',
     'server' => 'localhost',
 
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
@@ -57,7 +57,8 @@ return array(
 		'cpTrigger' => 'admin',
 
     'environmentVariables' => array(
-      'basePath' => '/var/www/html/'
+      'basePath' => '/var/www/html/',
+      'baseUrl' => 'http://studymatchr.com/'
     )
   )
 );
