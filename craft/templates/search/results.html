@@ -26,16 +26,18 @@
             </div>
           </div>
 
-        {% paginate craft.categories.search(query).order('score').limit(1) as SearchResults %}
+        {% paginate craft.categories.search(query).order('score').limit(200) as SearchResults %}
         {% for category in SearchResults %}
         <div id="university-widget-wrapper">
             <a class="university-widget w-inline-block" href="{{ category.url }}">
-              <div class="university-widget-image"></div>
+              {% for asset in category.universityImage %}
+                <div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
+              {% endfor %}
               <div class="university-widget-content">
                 {% for asset in category.universityLogo %}
                   <img class="university-widget-logo" src="{{ asset.url }}" height="40">
                 {% endfor %}
-                <p class="small-paragraph">{{ category.description }}</p>
+                <p class="small-paragraph" id="university-widget-description">{{ category.description }}</p>
               </div>
             </a>
         </div>

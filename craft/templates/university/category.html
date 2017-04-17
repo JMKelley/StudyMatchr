@@ -21,13 +21,13 @@
 				<div class="inpost-information">
 					<div class="column-fixed-width">
 						{% for asset in category.universityLogo %}
-							<img class="university-widget-logo" src="{{ asset.url }}" height="40">
+							<img class="university-widget-logo tablet-image" src="{{ asset.url }}" height="40">
 						{% endfor %}
 					</div>
 					<div class="column-fixed-width">
-						<a class="inpost-location w-inline-block" href="#">
+						<div class="inpost-location w-inline-block" href="#">
 							<div class="location-link small-text-link">{{ category.location }}</div>
-						</a>
+						</div>
 					</div>
 
 					<!-- KEY FEATURES -->

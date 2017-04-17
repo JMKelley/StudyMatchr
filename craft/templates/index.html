@@ -60,7 +60,7 @@
     <img src="/resources/images/start-here.png" style="margin:5px 0px 0px 20px; width:117px;"/>
   </div>
   {% for asset in entry.featuredLandingImage %}
-    <div class="landing-block-2" style="background-image:url('{{asset.url}}')">
+    <div class="landing-block-2" id="clipped" style="background-image:url('{{asset.url}}')">
       <svg width="0px" height="0px" viewBox="-47 0 570 657" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
             <clipPath id="myClip">
@@ -79,19 +79,19 @@
   <div class="w-container">
     <div class="w-row">
       <div class="w-col w-col-3">
-        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        <div class="banner-university-block"><img class="banner-university-block-image" src="/resources/images/institute-marangoni.png">
         </div>
       </div>
       <div class="w-col w-col-3">
-        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        <div class="banner-university-block"><img class="banner-university-block-image" src="/resources/images/university-coventry.png">
         </div>
       </div>
       <div class="w-col w-col-3">
-        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        <div class="banner-university-block"><img class="banner-university-block-image" src="/resources/images/university-westminster.png">
         </div>
       </div>
       <div class="w-col w-col-3">
-        <div class="banner-university-block"><img src="/resources/images/test-uni-logo.png" width="111">
+        <div class="banner-university-block"><img class="banner-university-block-image" src="/resources/images/university-glion.png">
         </div>
       </div>
     </div>
@@ -219,6 +219,8 @@
   </div>
 
 <!-- END -->
+
+
 
 
 
