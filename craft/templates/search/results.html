@@ -26,9 +26,10 @@
             </div>
           </div>
 
-        {% paginate craft.categories.search(query).order('score').limit(200) as SearchResults %}
-        {% for category in SearchResults %}
+
         <div id="university-widget-wrapper">
+          {% paginate craft.categories.search(query).order('score').limit(200) as SearchResults %}
+          {% for category in SearchResults %}
             <a class="university-widget w-inline-block" href="{{ category.url }}">
               {% for asset in category.universityImage %}
                 <div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
@@ -40,8 +41,9 @@
                 <p class="small-paragraph" id="university-widget-description">{{ category.description }}</p>
               </div>
             </a>
+          {% endfor %}
         </div>
-        {% endfor %}
+
 
           <div id="pagination">
             {% if paginate.prevUrl %}

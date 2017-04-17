@@ -72,7 +72,7 @@ body.down .navigation.clone {
   background-repeat: no-repeat;
   -webkit-transition: border-color 50ms ease;
   transition: border-color 50ms ease;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.1px;
@@ -85,7 +85,7 @@ body.down .navigation.clone {
 .navigation-link {
   padding: 23px 16px 22px;
   float: right;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Smbd';
   color: #777d80;
   font-size: 12.3px;
   font-weight: 600;
@@ -119,7 +119,7 @@ body.down .navigation.clone {
   margin-bottom: 60px;
   padding-right: 8px;
   padding-left: 8px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #7b8893;
   font-size: 14.5px;
   text-align: center;
@@ -131,7 +131,7 @@ body.down .navigation.clone {
 
 .h1 {
   margin-bottom: 60px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Light';
   font-size: 36px;
   line-height: 54px;
   font-weight: 300;
@@ -146,7 +146,7 @@ body.down .navigation.clone {
   float: left;
   border: 1px solid #d9e2e2;
   border-radius: 5px 0px 0px 5px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Light';
   font-size: 19px;
   font-weight: 300;
   letter-spacing: 0px;
@@ -236,7 +236,7 @@ body.down .navigation.clone {
 .heading-2 {
   margin-top: 0px;
   margin-bottom: 10px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Light';
   color: #222c2b;
   font-size: 30px;
   font-weight: 300;
@@ -245,7 +245,7 @@ body.down .navigation.clone {
 .ticked-list {
   margin-top: 15px;
   margin-bottom: 40px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Smbd';
   font-size: 14.7px;
   font-weight: 600;
 }
@@ -264,7 +264,7 @@ body.down .navigation.clone {
 
 .sub-heading {
   margin-bottom: 40px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #7b8893;
   font-size: 17px;
 }
@@ -276,7 +276,7 @@ body.down .navigation.clone {
   background-color: #1dc4ba;
   -webkit-transition: background-color 200ms ease-in-out;
   transition: background-color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Bold';
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -342,7 +342,7 @@ body.down .navigation.clone {
 
 .small-paragraph {
   margin-bottom: 10px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #626969;
 }
 
@@ -402,7 +402,7 @@ body.down .navigation.clone {
 
 .heading-3 {
   margin-bottom: 20px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Light';
   font-size: 30px;
   font-weight: 300;
 }
@@ -410,7 +410,7 @@ body.down .navigation.clone {
 .paragraph-text {
   overflow: hidden;
   height: 260px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #677271;
   font-size: 15.5px;
   line-height: 25px;
@@ -423,7 +423,7 @@ body.down .navigation.clone {
 }
 
 .generalText {
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #677271;
   font-size: 15.5px;
   margin-bottom:20px;
@@ -445,7 +445,7 @@ body.down .navigation.clone {
   padding-left: 0px;
   -webkit-transition: padding 200ms ease;
   transition: padding 200ms ease;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #1ec4ba;
   font-size: 18px;
   text-decoration: none;
@@ -466,7 +466,7 @@ body.down .navigation.clone {
 }
 
 .tiny-heading {
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Smbd';
   font-size: 15px;
   font-weight: 600;
 }
@@ -475,7 +475,7 @@ body.down .navigation.clone {
   display: block;
   padding-top: 4px;
   padding-bottom: 4px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #02b3a3;
   font-size: 15px;
   text-decoration: none;
@@ -503,7 +503,7 @@ body.down .navigation.clone {
   background-color: #fff;
   background-image: -webkit-linear-gradient(270deg, #fff, #fff);
   background-image: linear-gradient(180deg, #fff, #fff);
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #6b6b6b;
   font-size: 15px;
   text-indent: 10px;
@@ -557,7 +557,7 @@ body.down .navigation.clone {
 .small-subtext {
   padding-top: 2px;
   padding-bottom: 2px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #878e8d;
   font-size: 14px;
 }
@@ -570,7 +570,7 @@ body.down .navigation.clone {
   padding-bottom: 15px;
   padding-left: 20px;
   border-bottom: 1px solid #eee;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Smbd';
   color: #395b59;
   font-weight: 600;
   text-align: left;
@@ -610,7 +610,7 @@ body.down .navigation.clone {
 
 .heading-medium {
   margin-top: 0px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Light';
   font-size: 25px;
   font-weight: 300;
 }
@@ -618,7 +618,7 @@ body.down .navigation.clone {
 .heading-small {
   margin-top: 0px;
   margin-bottom: 5px;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Reg';
   color: #3c4645;
   font-size: 19px;
   font-weight: 400;
@@ -677,7 +677,7 @@ body.down .navigation.clone {
 {
     /* Sorry, we can’t find: */
   opacity: 0.42;
-  font-family: proxima-nova, sans-serif;
+  font-family:'Proxima N W01 Light';
   font-weight:300;
   font-size: 35px;
   color: #3C4645;
@@ -800,7 +800,7 @@ html.w-mod-js *[data-ix="on-load-move-in"] {
     display: block;
     width: 100%;
     padding: 35px 30px 35px 35px;
-    font-family: proxima-nova, sans-serif;
+    font-family:'Proxima N W01 Light';
     color: #3c4645;
     font-size: 24px;
     font-weight: 300;
@@ -966,7 +966,7 @@ html.w-mod-js *[data-ix="on-load-move-in"] {
   .mobile-top-block-feature-item {
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: proxima-nova, sans-serif;
+    font-family:'Proxima N W01 Reg';
     color: #6d7074;
     font-size: 17px;
   }
@@ -983,7 +983,7 @@ html.w-mod-js *[data-ix="on-load-move-in"] {
   {
       /* Sorry, we can’t find: */
     opacity: 0.42;
-    font-family: proxima-nova, sans-serif;
+    font-family:'Proxima N W01 Reg';
     font-size:24px;
     line-height: 35px;
   }
