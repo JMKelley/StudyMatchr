@@ -16,6 +16,7 @@ return array(
   'localhost' => array(
     'devMode' => true,
     'siteUrl' => 'http://localhost:8888/',
+    'server' => 'localhost',
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
 		'enableCsrfProtection' => true,
 		// Default Week Start Day (0 = Sunday, 1 = Monday...)
@@ -37,8 +38,9 @@ return array(
   ),
 
   // Use IP address of your droplet below
-  'http://studymatchr.com' => array(
-    'siteUrl' => 'http://studymatchr.com',
+  '138.68.20.244' => array(
+    'siteUrl' => 'http://138.68.20.244/',
+    'server' => 'localhost',
 
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
 		'enableCsrfProtection' => true,
@@ -56,7 +58,7 @@ return array(
 
     'environmentVariables' => array(
       'basePath' => '/var/www/html/',
-      'baseUrl'  => '138.68.20.244',
+      'baseUrl'  => 'http://138.68.20.244/',
     )
   )
 );
