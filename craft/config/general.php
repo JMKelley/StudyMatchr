@@ -38,8 +38,8 @@ return array(
   ),
 
   // Use IP address of your droplet below
-  '138.68.20.244' => array(
-    'siteUrl' => 'http://138.68.20.244/',
+  'studymatchr.com' => array(
+    'siteUrl' => 'studymatchr.com',
     'server' => 'localhost',
 
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
@@ -58,7 +58,7 @@ return array(
 
     'environmentVariables' => array(
       'basePath' => '/var/www/html/',
-      'baseUrl'  => 'http://138.68.20.244/',
+      'baseUrl'  => 'http://studymatchr.com/',
     )
   )
 );
