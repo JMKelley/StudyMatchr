@@ -56,6 +56,7 @@ return array(
 		// Control Panel trigger word
 		'cpTrigger' => 'admin',
 
+
     'environmentVariables' => array(
       'basePath' => '/var/www/html/',
       'baseUrl'  => 'http://studymatchr.com/',
