@@ -38,7 +38,7 @@ return array(
 
   // Use IP address of your droplet below
   '138.68.20.244' => array(
-    'siteUrl' => 'http://studymatchr.com',
+    'siteUrl' => 'http://138.68.20.244/',
 
 		// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
 		'enableCsrfProtection' => true,
@@ -57,6 +57,30 @@ return array(
     'environmentVariables' => array(
       'basePath' => '/var/www/html/',
       'baseUrl'  => 'http://138.68.20.244/',
+    )
+  )
+
+  // Use IP address of your droplet below
+  'studymatchr.com' => array(
+    'siteUrl' => 'http://138.68.20.244/',
+
+    // Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
+    'enableCsrfProtection' => true,
+    // Default Week Start Day (0 = Sunday, 1 = Monday...)
+    'defaultWeekStartDay' => 0,
+    // Whether "index.php" should be visible in URLs (true, false, "auto")
+    'omitScriptNameInUrls' => 'auto',
+
+    'defaultSearchTermOptions' => array(
+      'subLeft' => true,
+      'subRight' => true,
+    ),
+    // Control Panel trigger word
+    'cpTrigger' => 'admin',
+
+    'environmentVariables' => array(
+      'basePath' => '/var/www/html/',
+      'baseUrl'  => 'http://studymatchr.com',
     )
   )
 );
