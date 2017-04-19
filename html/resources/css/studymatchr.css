@@ -327,6 +327,11 @@ body.down .navigation.clone {
   transform: translate(0px, -15px);
 }
 
+.university-widget-content h4
+{
+  margin-bottom:10px;
+}
+
 .university-widget-content {
   padding: 30px;
   color: #3c4645;
@@ -418,7 +423,7 @@ body.down .navigation.clone {
 
 #university-widget-description
 {
-  height:143px;
+  height:140px;
   overflow:hidden;
 }
 
