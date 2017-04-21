@@ -13,6 +13,8 @@
     },
 ] %}
 
+<title>HTML Reference</title>
+
 {% set selectedSortOption = craft.request.getParam('order', 'title asc') %}
 
 <div class="universities-block">
@@ -94,6 +96,10 @@
       // override text when no pages left
   }));
 
+</script>
+
+<script>
+  document.title = "Universities | StudyMatchr";
 </script>
 
 

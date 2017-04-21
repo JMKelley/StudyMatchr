@@ -67,13 +67,14 @@
 
                       <a class="university-widget w-inline-block" href="{{ category.url }}">
 
-                          <div class="university-widget-image" style="background-image: url('')"></div>
-
+                        {% for asset in category.universityImage %}
+                          <div class="university-widget-image" style="background-image:url({{ asset.url }})"></div>
+                        {% endfor %}
                         <div class="university-widget-content">
                           {% for asset in category.universityLogo %}
                             <img class="university-widget-logo" src="{{asset.url}}" height="40">
                           {% endfor %}
-                          <p class="small-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                        <p class="small-paragraph" id="university-widget-description">{{ category.description }}</p>
                         </div>
                       </a>
 
